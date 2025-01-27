@@ -810,7 +810,7 @@
       hero.style.backgroundImage = `url('${images[currentImageIndex]}')`;
     }
 
-    setInterval(changeBackgroundImage, 5000);
+    setInterval(changeBackgroundImage, 8000);
 
     // Typing Effect for Hero Section
     const typingEffect = new Typewriter('#typing-effect', {
@@ -821,8 +821,9 @@
     typingEffect.typeString('Full-Stack Web Developer')
       .pauseFor(2000)
       .deleteAll()
-      .typeString('UI/UX Designer')
-      .pauseFor(2000)
+      .typeString('Front-End Developer')
+      .typeString('Back-End Developer') 
+      .pauseFor(3000)
       .deleteAll()
       .start();
 

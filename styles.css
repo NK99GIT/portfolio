@@ -1,0 +1,238 @@
+/* Circular Progress Animation */
+[style*="--percent"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  border-top-color: inherit;
+  transform: rotate(calc(var(--percent) * 3.6deg));
+  transform-origin: center;
+  animation: progress-animation 1.5s ease-out forwards;
+}
+
+[style*="--percent"] {
+  position: relative;
+  --deg: calc(var(--percent) * 3.6deg);
+  border-image: linear-gradient(
+    90deg,
+    transparent 50%,
+    currentColor 50%
+  );
+  transform: rotate(0deg);
+}
+
+/* Animation Keyframes */
+@keyframes progress-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(var(--deg));
+  }
+}
+.progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+
+/* Services Section */
+#services {
+  font-family: Arial, sans-serif;
+}
+
+.service-card {
+  width: 16rem; /* Fixed width */
+  height: 20rem; /* Fixed height */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow change on hover */
+}
+
+.icon {
+  height: 5rem;
+  width: 5rem;
+  background-color: #e0f7fa; /* Default background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.icon svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 0.875rem;
+  color: #4a4a4a;
+  /* text-align: center; */
+}
+
+
+
+/* Hero Section */
+.bebas-neue-regular {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  animation: fade 1.5s ease-in-out;
+  transition: 3s linear;
+  background-image: url('./asserts//banner.jpg');
+}
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+
+
+.nav-color-transparent {
+  background-color: transparent;
+}
+
+.nav-color {
+  background-color: #374151;
+  color: #fff;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Sticky Navbar */
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.nav-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* For Chrome, Safari, and Edge */
+}
+
+
+.testimonials {
+  background-color: #f7f9fc;
+  /* Light gray-blue tone for better contrast */
+}
+
+.testimonials h2 {
+  color: #2d3748;
+  /* Dark gray for a clean look */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide .bg-white {
+  max-width: 350px;
+  margin: auto;
+  height: 400px;
+  max-height: 400px;
+}
+
+.swiper {
+  padding-bottom: 80px !important;
+
+}
+
+.cursor-follower {
+  position: fixed;
+  /* 'absolute' was incorrect, 'fixed' keeps it in the same spot relative to the viewport */
+  width: 20px;
+  height: 20px;
+  /* background-color: rgba(255, 25, 25, 0.6); */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+  transform-origin: center;
+  border: 2px solid rgba(255, 0, 0, 0.885);
+}
+
+/* Small cursor (default) */
+.cursor-small {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 0, 0, 0.885);
+}
+
+/* Bigger cursor on hover over clickable elements */
+.cursor-big {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+} 
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+               0 0 20px rgba(255, 255, 255, 0.6),
+               0 0 30px rgba(255, 255, 255, 0.4);
+}
